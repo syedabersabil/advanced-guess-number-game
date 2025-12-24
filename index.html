@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Guess the Number Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-header">
+            <h1>🎯 Guess the Number</h1>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Level:</span>
+                    <span id="currentLevel" class="stat-value">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Score:</span>
+                    <span id="score" class="stat-value">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Attempts:</span>
+                    <span id="attempts" class="stat-value">10</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="level-info">
+            <h2 id="levelTitle">Level 1: Guess between 1 and 50</h2>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <div class="game-area">
+            <div id="message" class="message">Enter your guess!</div>
+            
+            <div class="input-group">
+                <input type="number" id="guessInput" placeholder="Enter your guess" min="1" />
+                <button id="submitBtn" class="btn btn-primary">Submit</button>
+            </div>
+
+            <div class="guess-history">
+                <h3>Previous Guesses:</h3>
+                <div id="historyList" class="history-list"></div>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <button id="restartBtn" class="btn btn-secondary">Restart Level</button>
+            <button id="nextLevelBtn" class="btn btn-success" style="display:none;">Next Level</button>
+        </div>
+
+        <div id="victoryModal" class="modal">
+            <div class="modal-content">
+                <h2>🎉 Congratulations!</h2>
+                <p id="victoryMessage"></p>
+                <button id="continueBtn" class="btn btn-primary">Continue</button>
+            </div>
+        </div>
+
+        <div id="gameOverModal" class="modal">
+            <div class="modal-content">
+                <h2>😢 Game Over!</h2>
+                <p id="gameOverMessage"></p>
+                <button id="tryAgainBtn" class="btn btn-primary">Try Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
